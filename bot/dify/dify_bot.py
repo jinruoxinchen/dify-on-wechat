@@ -20,7 +20,7 @@ from common.utils import parse_markdown_text, print_red
 from common.tmp_dir import TmpDir
 from config import conf
 
-UNKNOWN_ERROR_MSG = "我暂时遇到了一些问题，请您稍后重试~"
+UNKNOWN_ERROR_MSG = "不好意思，刚刚手滑把消息删了，没看到您说了什么，能再发一遍吗？"
 
 class DifyBot(Bot):
     def __init__(self):

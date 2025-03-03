@@ -10,6 +10,7 @@ from common import const
 from config import load_config
 from plugins import *
 import threading
+import argparse
 
 
 def sigterm_handler_wrap(_signo):
@@ -42,6 +43,14 @@ def start_channel(channel_name: str):
 
 def run():
     try:
+        parser = argparse.ArgumentParser()
+        parser.add_argument('--config', type=str, default='config.json',
+                            help='配置文件路径')
+        args = parser.parse_args()
+
+        # 设置环境变量，让配置加载模块知道使用哪个配置文件
+        os.environ['DOW_CONFIG_PATH'] = args.config
+        logger.info("App startup...")
         # load config
         load_config()
         # ctrl + c

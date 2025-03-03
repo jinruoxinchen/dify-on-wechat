@@ -5,12 +5,12 @@ from config import conf
 class DifySession(object):
     def __init__(self, session_id: str, user: str, conversation_id: str=''):
         self._session_id = session_id
-        self._user = user
+        self._user = session_id
         self._conversation_id = conversation_id
         self._user_message_counter = 0
         # 新增字段
-        self._user_id = ''
-        self._user_name = ''
+        self._user_id = session_id
+        self._user_name = user
         self._room_id = ''
         self._room_name = ''
 
